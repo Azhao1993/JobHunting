@@ -25,12 +25,17 @@ public class CharacterShift {
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNext()) {
 			String temp = sc.nextLine();
-			sloution(temp);
+			getResult(temp);
 			// System.out.println(result);
 		}
 	}
+	
+	public static void getResult(String str){          
+        System.out.println(str.replaceAll("[A-Z]","")+str.replaceAll("[a-z]",""));
+    }
 
 	public static void sloution(String s) {
+		
 		int length = s.length();
 		int count = 0;
 		for (int i = 0; i < length; i++) {
