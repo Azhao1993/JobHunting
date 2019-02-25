@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
 /*
 	时间限制：1秒
 	空间限制：32768K
@@ -29,7 +30,7 @@ import java.util.Scanner;
 	输出例子1:
 		1 2
 */
-
+//有趣的数字
 public class InterestingNumbers {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
