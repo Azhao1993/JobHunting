@@ -1,5 +1,9 @@
 package Tencent_2017_SummerInternship;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 /*
 	时间限制：1秒
 	空间限制：32768K
@@ -24,57 +28,74 @@ package Tencent_2017_SummerInternship;
 		45 12 45 32 5 6	
 	输出例子1:
 		1 2
- */
-import java.util.Scanner;
-import java.util.HashMap;
+*/
 
 public class InterestingNumbers {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		String str = sc.nextLine();
-		String[] strarr = str.split(" ");
-		int[] arr = new int[n];
-		for (int i = 0; i < n; i++) {
-			arr[i] = Integer.valueOf(strarr[i]);
-		}
+		while (sc.hasNext()) {
+			int n = sc.nextInt();
+			int[] arr = new int[n];
+			// 最小值
+			int min = Integer.MAX_VALUE;
+			// 最大值
+			int max = Integer.MIN_VALUE;
+			// 最小值的个数
+			int minCount = 0;
+			// 最小值的个数
+			int maxCount = 0;
+			Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+			for (int i = 0; i < n; i++) {
+				arr[i] = sc.nextInt();
+				map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+				if (min > arr[i]) {
+					min = arr[i];
+					minCount = 1;
 
-		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		for (int i = 0; i < n - 1; i++) {
-			for (int j = i + 1; j < n; j++) {
-				int temp = Math.abs(arr[i] - arr[j]);
-				if (map.containsKey(temp)) {
-					int count = map.get(temp);
-					map.put(temp, count + 1);
-				} else {
-					map.put(temp, 1);
+				} else if (arr[i] == min) {
+					minCount++;
+				}
+
+				if (max < arr[i]) {
+					max = arr[i];
+					maxCount = 1;
+				} else if (arr[i] == max) {
+					maxCount++;
+				}
+
+			}
+			// 如果数组中的值全相同，直接两两组合
+			if (min == max) {
+				int tmp = (n * (n - 1)) / 2;
+				System.out.println(tmp + " " + tmp);
+				continue;
+			}
+			Arrays.sort(arr);// 时间复杂度太高
+
+			int res_min_dif = 0;
+			// 最小差为0
+			if (map.keySet().size() != n) {
+				for (Integer temp : map.keySet()) {
+					if (map.get(temp) > 1) {
+						res_min_dif += (map.get(temp) - 1) * map.get(temp) / 2;
+					}
+				}
+			} else {
+				// 最小差不为0
+				int mindif = Math.abs(arr[1] - arr[0]);
+				// int count = 0;
+				for (int i = 2; i < n; i++) {
+					if (mindif == Math.abs(arr[i] - arr[i - 1])) {
+						res_min_dif++;
+					} else if (mindif > Math.abs(arr[i] - arr[i - 1])) {
+						mindif = Math.abs(arr[i] - arr[i - 1]);
+						res_min_dif = 1;
+					}
 				}
 			}
+
+			System.out.println(res_min_dif + " " + (minCount * maxCount));
 		}
-		int[][] result = new int[map.size()][2];
-		int min = Integer.MAX_VALUE;
-		int max = Integer.MIN_VALUE;
-		int b = 0;
-		for (Integer y : map.keySet()) {
-			result[b][0] = y;
-			result[b++][1] = map.get(y);
-			if (y <= min) {
-				min = y;
-			} else if (y >= max) {
-				max = y;
-			}
-		}
-		int resultMin = 0;
-		int resultMax = 0;
-		for (int i = 0; i < result.length; i++) {
-			if (result[i][0] == min) {
-				resultMin = result[i][1];
-			}
-			if (result[i][0] == max) {
-				resultMax = result[i][1];
-			}
-		}
-		System.out.println(resultMin + " " + resultMax);
 
 	}
 
