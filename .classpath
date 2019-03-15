@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Tencent"/>
 	<classpathentry kind="src" path="NTES"/>
+	<classpathentry kind="src" path="ByteDance"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
