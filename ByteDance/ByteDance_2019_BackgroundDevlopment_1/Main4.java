@@ -1,7 +1,12 @@
-package ByteDance_2019_houduan;
+package ByteDance_2019_BackgroundDevlopment_1;
 
 import java.util.Scanner;
 
+/*
+	第四题:
+		有N根绳子，第i根长为Li，现需要m根等长绳子。
+		你可以对n根绳子进行任意剪裁(不能拼接)，计算出这m根绳子最长的长度多少?
+ */
 public class Main4 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

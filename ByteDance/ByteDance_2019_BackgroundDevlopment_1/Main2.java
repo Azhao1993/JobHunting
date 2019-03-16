@@ -1,7 +1,12 @@
-package ByteDance_2019_houduan;
+package ByteDance_2019_BackgroundDevlopment_1;
 
 import java.util.Scanner;
-
+/*
+	第二题:
+		1.三个同样的字母连在一起，一定是拼写错误，去掉一个就好了。比如:helllo --> hello
+		2.两对一样的字母(AABB型)连在一起，一定是拼写错误，去掉第二对的第一个字母。比如:helloo --> hello
+		3.上面的规则优先“从左到右”匹配，即如果是AABBCC型，应优先考虑修复AABB为AABCC。
+ */
 public class Main2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
