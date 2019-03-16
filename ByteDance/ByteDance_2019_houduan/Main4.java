@@ -5,39 +5,48 @@ import java.util.Scanner;
 public class Main4 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		// N根不等的绳子长度
 		int N = sc.nextInt();
+		// 裁剪成M跟等长的绳子
 		int M = sc.nextInt();
-		double[] len = new double[N];
+		// N根绳子的长度
+		int[] len = new int[N];
+
+		// 总绳长
+		int sum = 0;
 		for (int i = 0; i < N; i++) {
-			len[i] = sc.nextInt() * 100;
+			len[i] = sc.nextInt();
+			sum += len[i];
 		}
-		sloution(len, M, N);
+		sloution(len, M, N, sum);
 	}
 
-	private static void sloution(double[] len, int M, int N) {
-		int l = 0;
-		int r = 1000000000;
-		int ans = 0;
-		while (l <= r) {
-			int mid = (l + r )>> 1;
+	// 二分法
+	private static void sloution(int[] len, int M, int N, int sum) {
+		double l = 0;
+		double r = sum;
+		double ans = 0;
+		while (r - l > 1e-4) {
+			double mid = (l + r) / 2;
 			if (mid == 0) {
 				break;
 			}
-			if (pd(mid, N, len, M)) {
-				l = mid + 1;
+			if (check(mid, N, len, M)) {
+				l = mid;
 				ans = mid;
 			} else {
-				r = mid - 1;
+				r = mid;
 			}
 		}
-		System.out.println(String.format("%.2f", (double) (ans / 100)));
+		System.out.println(String.format("%.2f", ans));
 
 	}
 
-	private static boolean pd(int mid, int n, double[] a, int m) {
+	// 判断是否能截成M段
+	private static boolean check(double mid, int n, int[] a, int m) {
 		int sum = 0;
-		for (int i = 1; i < n; i++) {
-			sum += a[i] / mid;
+		for (int i = 0; i < n; i++) {
+			sum += Math.floor(a[i] / mid);
 		}
 		return sum >= m;
 	}
