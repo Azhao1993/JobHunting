@@ -1,4 +1,4 @@
-package ByteDance_2019_BackgroundDevlopment_1;
+package ByteDance_2019_BackgroundDevelopment_1;
 
 import java.util.Scanner;
 /*
