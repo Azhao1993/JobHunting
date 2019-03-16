@@ -1,6 +1,7 @@
 package ByteDance_2019_BackgroundDevelopment_1;
 
 import java.util.Scanner;
+
 /*
 	第二题:
 		1.三个同样的字母连在一起，一定是拼写错误，去掉一个就好了。比如:helllo --> hello
@@ -24,62 +25,37 @@ public class Main2 {
 			System.out.println(temp);
 			return;
 		}
-		
-		int i =0;
+
+		int i = 0;
 		int j;
 		int x;
 		int y;
-		while(i<=sb.length()-3) {
+		while (i <= sb.length() - 3) {
 			char ti = sb.charAt(i);
-			j=i+1;
+			j = i + 1;
 			char tj = sb.charAt(j);
-			if(ti!=tj) {
+			if (ti != tj) {
 				i++;
 				continue;
-			}else {
-				x=j+1;
+			} else {
+				x = j + 1;
 				char tx = sb.charAt(x);
-				if(tj==tx) {
+				if (tj == tx) {
 					sb.deleteCharAt(x);
-				}else {
-					y=x+1;
-					if(y>sb.length()-1) {
+				} else {
+					y = x + 1;
+					if (y > sb.length() - 1) {
 						break;
 					}
 					char ty = sb.charAt(y);
-					if(tx==ty) {
+					if (tx == ty) {
 						sb.deleteCharAt(y);
-					}else {
+					} else {
 						i++;
 					}
 				}
 			}
 		}
-//		for (i = 0; i < sb.length() - 3; i++) {
-//			char ti = sb.charAt(i);
-//			for (j = i + 1; j < sb.length() - 2; j++) {
-//				char tj = sb.charAt(j);
-//				if (ti != tj) {
-//					break;
-//				}
-//				for (x = j + 1; x < sb.length() - 1;) {
-//					char tx = sb.charAt(x);
-//					if (tj == tx) {
-//						sb.deleteCharAt(x);
-//					} else {
-//						for (y = x + 1; y < sb.length();) {
-//							char ty = sb.charAt(y);
-//							if (tx == ty) {
-//								sb.deleteCharAt(y);
-//							} else {
-//								break;
-//							}
-//						}
-//					}
-//
-//				}
-//			}
-//		}
 		System.out.println(sb.toString());
 
 	}
