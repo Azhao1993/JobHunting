@@ -6,6 +6,11 @@
 	<classpathentry kind="src" path="NTES"/>
 	<classpathentry kind="src" path="ByteDance"/>
 	<classpathentry kind="src" path="HUAWEI"/>
+<<<<<<< HEAD
 	<classpathentry kind="src" path="WeBank"/>
+=======
+	<classpathentry kind="src" path="Ailibaba"/>
+	<classpathentry kind="src" path="cmbc_2020_xinyongka"/>
+>>>>>>> branch 'master' of https://github.com/Azhao1993/JobHunting.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
