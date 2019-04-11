@@ -6,5 +6,6 @@
 	<classpathentry kind="src" path="NTES"/>
 	<classpathentry kind="src" path="ByteDance"/>
 	<classpathentry kind="src" path="HUAWEI"/>
+	<classpathentry kind="src" path="WeBank"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
