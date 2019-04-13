@@ -1,4 +1,4 @@
-package JingDong_2020_Spring;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,32 +20,41 @@ public class Main {
 				Node node = new Node(value1);
 				keytonode.put(value1, node);				
 			}
-
 			if (!keytonode.containsKey(value2)) {
 				Node node = new Node(value2);
 				keytonode.put(value2, node);				
 			}
 			keytonode.get(value2).next.add(keytonode.get(value1));
 		}
-
 		Node head = keytonode.get(1);
-
-		int res = getMax(keytonode, head);
+		int res = getMax( head);
 		System.out.println(res);
-
 	}
 
-	private static int getMax(HashMap<Integer, Node> keytonode, Node head) {
+	private static int getMax(Node head) {
 		if (head == null) {
 			return 0;
 		}
 		int res = 0;
 		for (Node nexts:head.next) {			
-			res = Math.max(res, getMax(keytonode, nexts));
+			res = Math.max(res, getSum( nexts));
+		}
+		return res;
+	}
+	
+	private static int getSum( Node head) {
+		if (head == null) {
+			return 0;
+		}
+		if(head.next.size()==0) {
+			return 1;
+		}
+		int res = 0;
+		for (Node nexts:head.next) {			
+			res += getSum(nexts);
 		}
 		return res+1;
 	}
-
 }
 
 class Node {
