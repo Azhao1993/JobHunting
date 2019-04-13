@@ -26,14 +26,22 @@ public class Main {
 				Node node = new Node(value2);
 				keytonode.put(value2, node);
 				nodetokey.put(node, value2);
-			}
-			
-			keytonode.get(value2).next.add(keytonode.get(value1));
-		
-			
+			}			
+			keytonode.get(value2).next.add(keytonode.get(value1));			
 		}
 		
+		Node head = keytonode.get(1);
+		
+		int res = getMax(keytonode,nodetokey,head);
+		System.out.println(res);
 
+	}
+
+	private static int getMax(HashMap<Integer, Node> keytonode, HashMap<Node, Integer> nodetokey, Node head) {
+		if(head==null) {
+			return 0;
+		}
+		for(int i= 0;i<)
 	}
 
 	
