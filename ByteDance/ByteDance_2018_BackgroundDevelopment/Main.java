@@ -1,46 +1,10 @@
 package ByteDance_2018_BackgroundDevelopment;
 
 import java.util.Scanner;
-//
-//public class Main {
-//
-//	public static void main(String[] args) {
-//		Scanner sc = new Scanner(System.in);
-//
-//		int n = sc.nextInt();
-//		// 用户及喜好读
-//		int[] fav = new int[n];
-//		for (int i = 0; i < n; i++) {
-//			fav[i] = sc.nextInt();
-//		}
-//		// q组数据
-//		int q = sc.nextInt();
-//		for (int i = 0; i < q; i++) {
-//			int l = sc.nextInt();// 左端点
-//			int r = sc.nextInt();// 右端点
-//			int k = sc.nextInt();// 喜好度
-//			int count = sloution(l, r, k, fav);
-//			System.out.println(count);
-//		}
-//
-//	}
-//
-//	private static int sloution(int l, int r, int k, int[] fav) {
-//		int count = 0;
-//		for (int i = l; i <= r; i++) {
-//			if (fav[i - 1] == k) {
-//				count++;
-//			}
-//		}
-//		return count;
-//
-//	}
-//
-//}
 
-//
 import java.util.*;
 
+//zi
 public class Main {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

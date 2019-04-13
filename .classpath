@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+<<<<<<< HEAD
 	<classpathentry kind="src" path="JD"/>
+=======
+	<classpathentry kind="src" path="MIHAYOU"/>
+>>>>>>> branch 'master' of https://github.com/Azhao1993/JobHunting.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
