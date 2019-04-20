@@ -2,7 +2,27 @@
 package NETS;
 
 import java.util.Scanner;
+/*
+5
+6 5
+4 3 0 42
+10 6
+5 3 1 46
+5 5
+3 3 1 7
+5 5
+3 3 1 6
+7 7
+4 5 2 9
 
+
+35
+22
+8
+6
+5
+
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -31,8 +51,8 @@ public class Main {
 			switch (w) {
 			// 左上方向
 			case 0:
-				stepx = x - 1;
-				stepy = y - 1;
+				stepx = y - 1;
+				stepy = x - 1;
 				if (stepx == stepy) {
 					// 撞到 1, 1
 					t -= stepx;
@@ -48,7 +68,7 @@ public class Main {
 						res[0]++;
 					x = 1;
 					y = y - stepy;
-					w = 2;
+					w = 3;
 				} else {
 					// 撞到了左边
 					t -= stepx;
