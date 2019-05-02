@@ -8,36 +8,30 @@ public class Main {
 		int t = sc.nextInt();
 		for(int i = 0;i<t;i++) {
 			long temp = sc.nextLong();
-			sloution(temp);
+			String str1 = sloution(temp);
 		}
 	}
-
-	private static void sloution(long temp) {
-		if(temp<10) {
-			System.out.println("G");
-			return;
-		}
-		boolean flag = false;
+	private static String sloution(long temp) {
+		if(temp<10) {			
+			return "G";
+		}		
 		long n = temp;
+		int count = 0;		
 		while(n>0) {
 			long num = n%10;
-			n /= 10;
 			if(num==0) {
-				flag = true;
+				count++;
 				continue;
+			}else {
+				long chu == temp/num;
+				if(chu*num==temp) {
+					count++;		
+				}				
 			}
-			if(temp%num==0) {
-				flag = true;				
-			}else if(flag){
-				System.out.println("H");
-				return;
-			}			
+			n /= 10;				
 		}
-		if(!flag) {
-			System.out.println("S");
-		}else {
-			System.out.println("G");
-		}
+		if(count==String)
+		
 		
 		
 	}
